@@ -14,7 +14,10 @@ fun main() {
     val message = AVRO_MESSAGE
     val schema = AVRO_SCHEMA
     val url: String = TODO("Provide url of the request")
-    val customHeaders: Map<String, String> = emptyMap()
+    val customHeaders: Map<String, String> = mapOf(
+        "hermes-message-id" to TODO("provide hermes message id"),
+        "schema-version" to TODO("provide schema version")
+    )
 
     val converter = JsonAvroConverter()
     val avro = converter.convertToAvro(message.toByteArray(charset = Charsets.UTF_8), schema)
